@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
     })
     .catch((err) => {
       console.log("POST /", err);
-      res.status(500).json({ error: "Car listing could not be created" });
+      res.status(500).json({ error: "Error creating this car" });
     });
 });
 
@@ -34,7 +34,7 @@ router.put("/:id", (req, res) => {
     .where({ id })
     .update(req.body)
     .then((car) => {
-      res.status(200).json({ message: "Car info updated" });
+      res.status(200).json({ message: "Car info was updated" });
     })
     .catch((err) => {
       console.log("PUT /:id", err);
